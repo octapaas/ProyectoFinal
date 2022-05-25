@@ -3,6 +3,10 @@ div{
     display: block;
 }
 
+.row{
+    padding: 0px;
+}
+
 app-redes{
     float: right;
     margin-top: 55px;
