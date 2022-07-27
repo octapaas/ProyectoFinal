@@ -1,23 +1,27 @@
 <div class="row">
     <h1>Experiencia Laboral</h1>
-    <div class="col-lg-11">
-        <ul>
-            <li>
-                <h1>Trabajo 1</h1> - <h3>(años)</h3>
-            </li>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate hic porro possimus alias nesciunt quo est repudiandae, corrupti architecto numquam modi ut error harum earum, quibusdam eum, officiis sit maxime?</p>
-        </ul>
-        <ul>
-            <li>
-                <h1>Trabajo 2</h1> - <h3>(años)</h3>
-            </li>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate hic porro possimus alias nesciunt quo est repudiandae, corrupti architecto numquam modi ut error harum earum, quibusdam eum, officiis sit maxime?</p>
-        </ul>
-        <ul>
-            <li>
-                <h1>Trabajo 3</h1> - <h3>(años)</h3>
-            </li>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate hic porro possimus alias nesciunt quo est repudiandae, corrupti architecto numquam modi ut error harum earum, quibusdam eum, officiis sit maxime?</p>
-        </ul>
+    <div class="col-lg-2"> 
+        <button type="button" class="btn btn-outline-dark" routerLink="/nuevaexp" *ngIf="isLogged">
+            Nueva Experiencia
+        </button>
     </div>
+    
+    <div class="col-lg-1"></div>
+    <div class="col-lg-11">
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let Experiencia of exp">
+                    <td><h3>{{Experiencia.nombreE}}</h3></td>
+                    <td>{{Experiencia.descripcionE}}</td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-outline-primary" routerLink="/editexp/{{Experiencia.id}}"><i class="bi bi-pencil-square"></i> Editar</button>
+                    </td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-outline-dark" (click)="delete(Experiencia.id)"><i class="bi bi-trash3-fill"></i> Borrar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+      
 </div>
