@@ -1,7 +1,7 @@
 <div class="row">
     <h1>Proyectos Realizados</h1>
     <div class="col-lg-2">
-        <button type="button" class="btn btn-warning" routerLink="/nuevopro" *ngIf="isLogged">
+        <button type="button" class="btn btn-outline-dark" routerLink="/nuevopro" *ngIf="isLogged">
             Nuevo Proyecto
         </button>
     </div>
@@ -14,14 +14,14 @@
                         <h2>{{Proyectos.nombreP}}</h2>
                     </td>
                     <td>{{Proyectos.descripcionP}}</td>
-                    <td><img src={{Proyectos.imgP}} class="img-proyectos" width="500px" height="300px"></td>
+                    <td><img src= "https://i.imgur.com/FDUk3ta.png" width="500px" height="300px"></td>
                     <td *ngIf="isLogged">
-                        <button class="btn btn-danger" routerLink="/editpro/{{Proyectos.id}}">
-                            <i class="bi bi-pencil-fill"></i> EDITAR</button>
+                        <button class="btn btn-outline-primary" routerLink="/editpro/{{Proyectos.id}}">
+                            <i class="bi bi-pencil-fill"></i> Editar</button>
                     </td>
                     <td *ngIf="isLogged">
-                        <button class="btn btn-dark" (click)="delete(Proyectos.id)">
-                            <i class="bi bi-trash-fill"></i> BORRAR</button>
+                        <button class="btn btn-outline-dark" (click)="delete(Proyectos.id)">
+                            <i class="bi bi-trash-fill"></i> Borrar</button>
                     </td>
                 </tr>
             </tbody>

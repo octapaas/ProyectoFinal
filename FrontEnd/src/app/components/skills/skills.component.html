@@ -1,109 +1,24 @@
 <div class="row">
-    <h1>Hard & Soft Skills</h1>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-        [percent]="90"
-        [radius]="100"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'green'"
-        [innerStrokeColor]="'#C7E596'"
-        [title]="'HTML'"
-        [showUnits]="false"
-        [showSubtitle]="false"
-        [titleFontSize]="'40'"
-        [titleFontWeight]="'600'"
-        [animation]="true"
-        [animationDuration]="300"
-      >   </circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-        [percent]="85"
-        [radius]="100"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'green'"
-        [innerStrokeColor]="'#C7E596'"
-        [title]="'CSS'"
-        [showUnits]="false"
-        [showSubtitle]="false"
-        [titleFontSize]="'40'"
-        [titleFontWeight]="'600'"
-        [animation]="true"
-        [animationDuration]="300"
-      >   </circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-        [percent]="80"
-        [radius]="100"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'green'"
-        [innerStrokeColor]="'#C7E596'"
-        [title]="'JavaScript'"
-        [showUnits]="false"
-        [showSubtitle]="false"
-        [titleFontSize]="'30'"
-        [titleFontWeight]="'600'"
-        [animation]="true"
-        [animationDuration]="300"
-      >   </circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-        [percent]="70"
-        [radius]="100"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'green'"
-        [innerStrokeColor]="'#C7E596'"
-        [title]="'GitHub'"
-        [showUnits]="false"
-        [showSubtitle]="false"
-        [titleFontSize]="'40'"
-        [titleFontWeight]="'600'"
-        [animation]="true"
-        [animationDuration]="300"
-      >   </circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-        [percent]="90"
-        [radius]="100"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'green'"
-        [innerStrokeColor]="'#C7E596'"
-        [title]="'Ingles'"
-        [showUnits]="false"
-        [showSubtitle]="false"
-        [titleFontSize]="'40'"
-        [titleFontWeight]="'600'"
-        [animation]="true"
-        [animationDuration]="300"
-      >   </circle-progress>
-    </div>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-        [percent]="100"
-        [radius]="100"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'green'"
-        [innerStrokeColor]="'#C7E596'"
-        [title]="'Trabajo'"
-        [subtitle]="'en Equipo'"
-        [showUnits]="false"
-        [showSubtitle]="true"
-        [subtitleFontSize]="'30'"
-        [subtitleColor]="'#444444'"
-        [subtitleFontWeight]="'600'"
-        [titleFontSize]="'35'"
-        [titleFontWeight]="'600'"
-        [animation]="true"
-        [animationDuration]="300"
-      >   </circle-progress>
-    </div>
+  <h1>Habilidades</h1>
+  <div class="col-lg-2">
+      <button type="button" class="btn btn-outline-dark" routerLink="/nuevahab" *ngIf="isLogged">
+          Agregar Habilidad
+      </button>
+  </div>
+</div>
+  <div class="row" *ngFor="let Habilidades of habilidad">   
+      <h2>{{Habilidades.nombreH}} - {{Habilidades.porcentajeH}}% <img src="{{Habilidades.imgH}}" width="50px"></h2>
+      <div class="progress">
+           <div class="progress-bar" style="width: {{Habilidades.porcentajeH}}%" role="progressbar"></div>
+    </div> 
+  <div>
+  </div>
+    <td *ngIf="isLogged">
+      <button class="btn btn-outline-primary" routerLink="/edithab/{{Habilidades.id}}">
+          <i class="bi bi-pencil-fill"></i>Editar </button>
+  </td>
+  <td *ngIf="isLogged">
+      <button class="btn btn-outline-dark" (click)="delete(Habilidades.id)" id="borrar">
+          <i class="bi bi-trash-fill"></i>Borrar </button>
+  </td>  
 </div>
