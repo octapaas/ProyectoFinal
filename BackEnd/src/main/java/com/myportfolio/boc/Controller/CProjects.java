@@ -25,8 +25,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("pro")
-@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/proURL/")
+@CrossOrigin(origins = "https://bocback.herokuapp.com/proURL/")
 public class CProjects {
 
     @Autowired

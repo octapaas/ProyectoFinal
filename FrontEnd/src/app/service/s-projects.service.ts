@@ -7,7 +7,7 @@ import { Projects } from '../model/projects';
   providedIn: 'root'
 })
 export class SProjectsService {
-  proURL = 'http://localhost:8080/pro/';
+  proURL = 'https://bocback.herokuapp.com/proURL/';
 
   constructor(private httpClient: HttpClient) { }
 
